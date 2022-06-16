@@ -78,6 +78,9 @@ window.gameRSP = (() => {
 
       const indexComp = lang.indexOf(computerVariant);
       const indexPlayer = lang.indexOf(lang.find(element => element[0] === playerVariant));
+      if (indexPlayer < 0) {
+        return start();
+      }
 
       condition(indexComp, indexPlayer);
       start();
